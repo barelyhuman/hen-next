@@ -1,7 +1,15 @@
-import '../styles/globals.css'
+import { NProgress } from "components/nprogress";
+
+import "highlight.js/styles/ascetic.css";
+import "styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <NProgress />
+      <Component {...pageProps} />
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;

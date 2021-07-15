@@ -9,12 +9,26 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@babel/standalone": "^7.14.7",
+    "acorn": "^8.4.1",
+    "babel-plugin-transform-react-createelement-to-jsx": "^1.1.0",
+    "codejar": "^3.5.0",
+    "escodegen": "^2.0.0",
+    "highlight.js": "^11.1.0",
     "next": "11.0.1",
+    "nprogress": "^0.2.0",
+    "object-path": "^0.11.5",
+    "open-color": "^1.8.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-simple-code-editor": "^0.11.0"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^4.0.3",
     "eslint": "7.30.0",
-    "eslint-config-next": "11.0.1"
+    "eslint-config-next": "11.0.1",
+    "next-transpile-modules": "^8.0.0",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^6.7.0"
   }
 }
