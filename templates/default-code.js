@@ -5,17 +5,25 @@ import {format} from "https://esm.sh/@barelyhuman/date-utils";
 
 () => {
   // All code should be here, including component definitions
+  const [show,setShow] = React.useState(true);
   const classList = cn("bold");
   return (
     <>
-      <If condition={Math.random()>0.3}>
-        <button>{format("hh:mm",new Date())}</button>
+      <If condition={show}>
+        <>{format("DD/MM/YYYY | hh:mm",new Date())}</>
       </If>
+      <div className="mt-1">
+        <button onClick={()=>setShow(!show)}>Toggle Date</button>
+      </div>      
       <style jsx>{\`
         @import url("https://unpkg.com/open-color@1.8.0/open-color.css");
 
         .bold {
           font-weight: bold;
+        }
+
+        .mt-1{
+          margin-top:8px;
         }
 
         button {
