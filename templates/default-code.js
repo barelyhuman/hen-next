@@ -1,12 +1,13 @@
 export default `// You can import modules from esm and use them accordingly
 import cn from "https://esm.sh/clsx";
+import {format} from "https://esm.sh/@barelyhuman/date-utils";
 
 () => {
   // All code should be here, including component definitions
   const classList = cn("bold");
   return (
     <>
-      <button>hello</button>
+      <button>{format("hh:mm",new Date())}</button>
       <style jsx>{\`
         @import url("https://unpkg.com/open-color@1.8.0/open-color.css");
 
