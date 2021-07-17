@@ -4,7 +4,6 @@ import { If } from "https://esm.sh/react-extras";
 import { format } from "https://esm.sh/@barelyhuman/date-utils";
 
 () => {
-
   // All code should be here , including component definitions
 
   function Toggle({
@@ -169,8 +168,8 @@ import { format } from "https://esm.sh/@barelyhuman/date-utils";
       <Spacer y={16} x={8} />
       <Toggle accented />
       <style jsx global>{\`
-        :root{
-          --accent:red;
+        :root {
+          --accent: red;
         }
       \`}</style>
     </>
