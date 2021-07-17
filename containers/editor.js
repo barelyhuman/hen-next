@@ -23,7 +23,6 @@ export const Editor = ({ defaultValue, onChange, ...props }) => {
   return (
     <>
       <EditorToolbar code={code} onChange={handleChange} />
-      <Spacer y={1} />
       <CodeEditor
         value={code}
         onValueChange={handleChange}
