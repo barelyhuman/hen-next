@@ -4,6 +4,7 @@ import { useAsyncEffect } from "hooks/use-async-effect";
 import { fetcher } from "lib/fetcher";
 import { useState } from "react";
 import defaultCode from "templates/default-code";
+import debounce from "lodash.debounce";
 
 export default function Home() {
   const [code, setCode] = useState(defaultCode);
@@ -14,6 +15,8 @@ export default function Home() {
     await handleOnCodeChange(defaultCode);
   }, []);
 
+  // Call the transform code api to handle the given code
+  // transform it to a react mountable node
   const handleOnCodeChange = async (_code) => {
     try {
       const response = await fetcher("/api/transform-code", "POST", {
@@ -27,6 +30,10 @@ export default function Home() {
 
     setCode(_code);
   };
+
+  // Debounce the change handler to avoid triggering
+  // the transform call every keystroke
+  const debouncedHandleChange = debounce(handleOnCodeChange, 500);
 
   return (
     <>
@@ -112,7 +119,7 @@ export default function Home() {
           <div className="flex-1">
             <h3>Editor</h3>
             <hr />
-            <Editor defaultValue={code} onChange={handleOnCodeChange} />
+            <Editor defaultValue={code} onChange={debouncedHandleChange} />
           </div>
           <div className="ml-1 flex-1">
             <h3>Preview</h3>

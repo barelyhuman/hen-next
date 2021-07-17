@@ -2,6 +2,7 @@ import { Spacer } from "components/spacer";
 import hljs from "highlight.js";
 import React, { useState, useEffect } from "react";
 import CodeEditor from "react-simple-code-editor";
+import debounce from "lodash.debounce";
 
 import { EditorToolbar } from "./editor-toolbar";
 
