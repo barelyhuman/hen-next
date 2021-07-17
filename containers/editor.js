@@ -1,6 +1,9 @@
+import { Spacer } from "components/spacer";
 import hljs from "highlight.js";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CodeEditor from "react-simple-code-editor";
+
+import { EditorToolbar } from "./editor-toolbar";
 
 // TODO: assign this once a proper code editor is added
 const highlighter = (code) => {
@@ -18,6 +21,8 @@ export const Editor = ({ defaultValue, onChange, ...props }) => {
 
   return (
     <>
+      <EditorToolbar code={code} onChange={handleChange} />
+      <Spacer y={1} />
       <CodeEditor
         value={code}
         onValueChange={handleChange}

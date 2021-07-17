@@ -1,9 +1,9 @@
-import { useState } from "react";
 import { Editor } from "containers/editor";
 import { IFrameContainer } from "containers/iframe-container";
 import { useAsyncEffect } from "hooks/use-async-effect";
+import { fetcher } from "lib/fetcher";
+import { useState } from "react";
 import defaultCode from "templates/default-code";
-import { convertJSXToBrowser } from "lib/jsx-helpers";
 
 export default function Home() {
   const [code, setCode] = useState(defaultCode);
@@ -16,14 +16,9 @@ export default function Home() {
 
   const handleOnCodeChange = async (_code) => {
     try {
-      const response = await fetch("/api/transform-code", {
-        method: "POST",
-        body: JSON.stringify({ code: _code }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }).then((data) => data.json());
-
+      const response = await fetcher("/api/transform-code", "POST", {
+        code: _code,
+      });
       setImports(response.imports);
       setSnippet(response.snippet);
     } catch (err) {

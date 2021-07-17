@@ -9,16 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@babel/core": "^7.14.6",
     "@babel/standalone": "^7.14.7",
     "acorn": "^8.4.1",
     "babel-plugin-transform-react-createelement-to-jsx": "^1.1.0",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-react": "^7.14.5",
     "codejar": "^3.5.0",
     "escodegen": "^2.0.0",
     "highlight.js": "^11.1.0",
+    "lodash.debounce": "^4.0.8",
     "next": "11.0.1",
     "nprogress": "^0.2.0",
     "object-path": "^0.11.5",
     "open-color": "^1.8.0",
+    "prettier": "^2.3.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-simple-code-editor": "^0.11.0"

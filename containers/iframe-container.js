@@ -39,9 +39,12 @@ export const IFrameContainer = ({ imports, snippet, ...props }) => {
         }
 
         iframe {
-          width: 50%;
+          position: fixed;
+          width: 100%;
+          height: 100%;
           outline: #000;
           border: 0px;
+          overflow-y: auto;
         }
       `}</style>
     </>
